@@ -1,7 +1,7 @@
 // A function that creates random choices from an array
 
 function getComputerChoice(){
-    let choiceArray = ["Rock", "Paper", "Scissors"];
+    let choiceArray = ["ROCK", "PAPER", "SCISSORS"];
     let computerChoice = choiceArray[(Math.floor(Math.random() * choiceArray.length))]
     return(computerChoice);
 }
@@ -11,27 +11,27 @@ function playRound(computerSelection, playerSelection){
     let result = "";
 
     switch (true){
-        case (playerSelection == "Rock" && computerSelection == "Paper"):
+        case (playerSelection == "ROCK" && computerSelection == "PAPER"):
             result = "You Lose! Paper beats Rock";
             break;
 
-        case (playerSelection == "Paper" && computerSelection == "Rock"):
+        case (playerSelection == "PAPER" && computerSelection == "ROCK"):
             result = "You Win! Paper beats Rock";
             break;
         
-        case (playerSelection == "Scissors" && computerSelection == "Rock"):
+        case (playerSelection == "SCISSORS" && computerSelection == "ROCK"):
             result = "You Lose! Rock beats Scissors";
             break;
         
-        case (playerSelection == "Rock" && computerSelection == "Scissors"):
+        case (playerSelection == "ROCK" && computerSelection == "SCISSORS"):
             result = "You Win! Rock beats Scissors";
             break;
             
-        case (playerSelection == "Paper" && computerSelection == "Scissors"):
+        case (playerSelection == "PAPER" && computerSelection == "SCISSORS"):
             result = "You Lose! Scissors beats Paper";
             break;
 
-        case (playerSelection == "Scissors" && computerSelection == "Paper"):
+        case (playerSelection == "SCISSORS" && computerSelection == "PAPER"):
             result = "You Win! Scissors beats Paper";
             break;
 
@@ -56,7 +56,10 @@ console.log(computerSelection);
 document.getElementById('submit').onclick = function(){
 
     // Getting the user input from the text box
-    let playerSelection = document.getElementById('input').value;
+    let playerInput = document.getElementById('input').value;
+
+    // Convert the user's input to the case of the program
+    let playerSelection  = playerInput.toUpperCase();
 
     console.log(playerSelection);
 
