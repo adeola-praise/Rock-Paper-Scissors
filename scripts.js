@@ -10,6 +10,7 @@ let computerScore = 0;
 
 // Function that plays one round of the game
 function playRound(computerSelection, playerSelection){
+    
     let result = "";
 
     switch (true){
@@ -81,4 +82,3 @@ Game();
 
 // Display the winner at the end of the game
 alert(`You: ${playerScore} | Computer: ${computerScore}`);
-
