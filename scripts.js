@@ -8,13 +8,22 @@ function getComputerChoice(){
 let playerScore = 0;
 let computerScore = 0;
 
-let rock = document.querySelector('#rock')
-let paper = document.querySelector('#paper')
-let scissors = document.querySelector('#scissors')
+// Getting the computer's choice
+let computerSelection = getComputerChoice();
+console.log(computerSelection);
 
-rock.addEventListener('click', playRound)
-paper.addEventListener('click', playRound)
-scissors.addEventListener('click', playRound);
+// Get rps buttons
+let rpsBtn = document.querySelectorAll('button');
+
+// Loop through the buttons
+rpsBtn.forEach(function(btn){
+    // Assign the value of any button clicked to playerSelection
+    item.onclick = function(){
+        let playerSelection = btn.value;
+        // Call the playRound function
+        playRound(computerSelection, playerSelection);
+    }  
+})
 
 // Function that plays one round of the game
 function playRound(computerSelection, playerSelection){
