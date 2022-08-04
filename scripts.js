@@ -8,6 +8,14 @@ function getComputerChoice(){
 let playerScore = 0;
 let computerScore = 0;
 
+let rock = document.querySelector('#rock')
+let paper = document.querySelector('#paper')
+let scissors = document.querySelector('#scissors')
+
+rock.addEventListener('click', playRound)
+paper.addEventListener('click', playRound)
+scissors.addEventListener('click', playRound);
+
 // Function that plays one round of the game
 function playRound(computerSelection, playerSelection){
     
@@ -60,7 +68,6 @@ function playRound(computerSelection, playerSelection){
 }
 
 function Game(){
-
     for (let i = 0; i < 5; i++) {
 
         // Getting the computer's choice
@@ -78,7 +85,7 @@ function Game(){
 }
 
 // Call the game function
-Game();
+//Game();
 
 // Display the winner at the end of the game
-alert(`You: ${playerScore} | Computer: ${computerScore}`);
+//alert(`You: ${playerScore} | Computer: ${computerScore}`);

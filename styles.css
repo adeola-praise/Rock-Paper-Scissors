@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    background-color: blueviolet;
+}
+
+.score{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    color: whitesmoke;
+    font-weight: 600;
+    font-size: 30px;
+    margin: 30px;
+}
+
+.player, .comp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label{
+    margin: 20px;
+}
+
+p{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 400;
+    color: white;
+}
+
+.choiceimg{
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    align-items: center;
+    margin: 40px;
+}
+
+img{
+    width: 100px;
+    margin: 20px;
+}
+
+.rps{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 60px;
+}
+
+button{
+    background-color: #29cb2e; /* Green */
+    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+  }
