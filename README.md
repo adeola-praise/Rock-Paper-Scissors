@@ -7,3 +7,6 @@ This project is part of the foundation javascript course of The Odin Project (TO
 ## How To Play
 The game of Rock, Paper, Scissors is played like this: at the same time, two players display one of three symbols: a rock, paper, or scissors. A rock beats scissors by smashing it, scissors beat paper by cutting it, and paper beats rock by covering it. If both players throw the same symbol, the game is tied.
 ## Visuals
+### Here's a Screenshot!
+
+![alt text](https://github.com/adeola-praise/Rock-Paper-Scissors/blob/main/images/gameplay/Desktop-View.png "UI Screenshot")
