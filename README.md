@@ -1,7 +1,7 @@
 # Rock-Paper-Scissors
 
 ## Description
-A programmed version of the the popular hand game "Rock, Paper, Scissors".
+A programmed version of the popular hand game "Rock, Paper, Scissors".
 #### Play game here: https://adeola-praise.github.io/Rock-Paper-Scissors/
 ## Why I Built This Project
 This project is part of the foundation javascript course of The Odin Project (TOP). I built this project to apply some of the basic knowledge I have gotten so far in learning Javascript.
