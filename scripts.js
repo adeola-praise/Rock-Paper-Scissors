@@ -20,7 +20,7 @@ let imgDiv = document.querySelector('.choiceimg');
 // Show icons that match the computer's choice
 function ShowCompImg(computerSelection) {
     if(computerSelection == 'ROCK'){
-        compImg.src = "./images/rps-icons/paper.png"
+        compImg.src = "./images/rps-icons/rock.png"
         imgDiv.appendChild(compImg);
      }
      else if (computerSelection == 'PAPER') {
