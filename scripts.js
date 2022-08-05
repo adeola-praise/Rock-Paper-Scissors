@@ -152,6 +152,10 @@ function playRound(computerSelection, playerSelection){
         display.textContent = "You win! What next?";
         replayBtn.innerText = "Play Again";
         btnDiv.appendChild(replayBtn);
+      } else if(playerScore == computerScore){
+        display.textContent = "You drawed!!! That was a real battle";
+        replayBtn.innerText = "Play Again";
+        btnDiv.appendChild(replayBtn);
       } else {
         display.textContent = "You lost...What are you going to do about it?";
         replayBtn.innerText = "Try Again?";

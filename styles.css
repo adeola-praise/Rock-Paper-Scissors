@@ -79,6 +79,28 @@ button:hover {
 .replay{
     display: flex;
     justify-content: center;
-    align-items: center
-    ;
+    align-items: center;
+}
+
+@media (max-width: 600px){
+    .score{
+        font-size: 15px;
+        margin-top: 70px;
+        margin-bottom: 60px;
+    }
+
+    button{
+        padding: 15px 20px;
+        font-size: 20px;
+    }
+
+    .rps{
+        margin-top: 70px;
+        gap: 15px;
+    }
+
+    p{
+        font-size: 20px;
+        margin-bottom: 60px;
+    }
 }
