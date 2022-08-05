@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&family=Press+Start+2P&family=Special+Elite&display=swap');
+
 *{
     margin: 0;
     background-color: blueviolet;
@@ -11,7 +13,9 @@
     color: whitesmoke;
     font-weight: 600;
     font-size: 30px;
-    margin: 30px;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .player, .comp{
@@ -29,6 +33,8 @@ p{
     font-size: 40px;
     font-weight: 400;
     color: white;
+    font-family: 'Special Elite', cursive;
+    margin-top: 30px;
 }
 
 .choiceimg{
@@ -40,7 +46,7 @@ p{
 }
 
 img{
-    width: 100px;
+    width: 120px;
     margin: 20px;
 }
 
@@ -54,11 +60,25 @@ img{
 
 button{
     background-color: #29cb2e; /* Green */
+    transition-duration: 0.4s;
     border-radius: 5px;
     color: white;
-    padding: 15px 32px;
+    padding: 15px 50px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 20px;
-  }
+    font-size: 30px;
+    font-family: 'Special Elite', cursive;
+}
+
+button:hover {
+    background-color: #00e10b; /* Green */
+    color: white;
+}
+
+.replay{
+    display: flex;
+    justify-content: center;
+    align-items: center
+    ;
+}

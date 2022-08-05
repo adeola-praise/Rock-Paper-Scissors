@@ -5,39 +5,19 @@ function getComputerChoice(){
     return(computerChoice);
 }
 
-let playerScore = 0;
-let computerScore = 0;
-
-// Get the computer's choice
-let computerSelection = getComputerChoice();
-console.log(computerSelection);
-
-// Get rps buttons
-let rpsBtn = document.querySelectorAll('button');
-
-// Loop through the rps buttons
-rpsBtn.forEach(function(btn){
-    // Assign the value of any button clicked to playerSelection
-    btn.onclick = function(){
-        let playerSelection = btn.value;
-        // Call the playRound function
-        playRound(computerSelection, playerSelection);
-        ShowCompImg(computerSelection);
-        ShowPlayerImg(playerSelection);
-        console.log(imgDiv.lastChildElement)
-    }
-
-})
-
 // Create image element for player's choice
 let playerImg = document.createElement('img');
 
 // Create image element for computer's choice
 let compImg = document.createElement('img');
 
-// Select the image div
-let imgDiv = document.querySelector('.choiceimg')
+// Flip computer's choice icon
+compImg.style.transform = "scaleX(-1)";
 
+// Select the image div
+let imgDiv = document.querySelector('.choiceimg');
+
+// Show icons that match the computer's choice
 function ShowCompImg(computerSelection) {
     if(computerSelection == 'ROCK'){
         compImg.src = "./images/rock.png"
@@ -53,6 +33,7 @@ function ShowCompImg(computerSelection) {
      }
 }
 
+// Show icons that match the player's choice
 function ShowPlayerImg(playerSelection){
 
      if(playerSelection == 'ROCK'){
@@ -69,11 +50,21 @@ function ShowPlayerImg(playerSelection){
      }  
 }
 
+// Get winning display board
+let display = document.querySelector('p')
+
+// Get score board
+let playerBoard = document.querySelector('#pScore');
+let computerBoard = document.querySelector('#cScore');
+
+// Store scores in a variable;
+let playerScore = 0;
+let computerScore = 0;
+
 // Function that plays one round of the game
 function playRound(computerSelection, playerSelection){
-
     let result = "";
-
+    
     switch (true){
         case (playerSelection == "ROCK" && computerSelection == "PAPER"):
             computerScore++;
@@ -116,29 +107,69 @@ function playRound(computerSelection, playerSelection){
             alert("Wrong input!");
     }
 
-    alert(result);
+    // Display results
+    display.textContent = result;
+
+    // Display the scores
+    playerBoard.textContent = playerScore;
+    computerBoard.textContent = computerScore;
+
     return(result);
 }
 
-function Game(){
-    for (let i = 0; i < 5; i++) {
+ // Get rps buttons
+ let rpsBtn = document.querySelectorAll('button');
+ // Loop through the rps buttons
+ rpsBtn.forEach(function (btn){
+     // Assign the value of any button clicked to playerSelection
+     btn.onclick = function(){
 
-        // Getting the computer's choice
-        let computerSelection = getComputerChoice();
-        console.log(computerSelection);
+         // Get the computer's choice
+         let computerSelection = getComputerChoice();
+         console.log(computerSelection);
 
-        // Getting the player's input from the text box
-        let playerInput = prompt("ROCK-PAPER-SCISSORS");
+         // Call the playRound function
+         let playerSelection = btn.value;
+         ShowPlayerImg(playerSelection);
+         ShowCompImg(computerSelection);
+         playRound(computerSelection, playerSelection);
 
-        // Convert the user's input to the case of the program
-        playerSelection = playerInput.toUpperCase();
+         if (playerScore === 5 || computerScore === 5) {
+            declareWinner();
+        }
+ }})
 
-        (playRound(computerSelection, playerSelection));
+ // Get the div for replay button
+ let btnDiv = document.querySelector('.replay');
+
+ // Get the replay button
+ let replayBtn = document.createElement('button');
+
+ // Declare the Winner
+ function declareWinner(){
+    Hide();
+    if (playerScore > computerScore) {
+        display.textContent = "You win! What next?";
+        replayBtn.innerText = "Play Again";
+        btnDiv.appendChild(replayBtn);
+      } else {
+        display.textContent = "You lost...What are you going to do about it?";
+        replayBtn.innerText = "Try Again?";
+        btnDiv.appendChild(replayBtn);
     }
-}
+ }
 
-// Call the game function
-//Game();
+ // Hide rps buttons and images
+ function Hide() {
+    rpsBtn.forEach(function(btn){
+        btn.style.display = 'none';
+        playerImg.style.display = 'none';
+        compImg.style.display = 'none';
+    })
+ }
 
-// Display the winner at the end of the game
-//alert(`You: ${playerScore} | Computer: ${computerScore}`);
+// Enable game reload when replay button is clicked
+ replayBtn.onclick = function(){
+    location.reload();
+ }
+ 
