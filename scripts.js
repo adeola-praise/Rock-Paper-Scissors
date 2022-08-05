@@ -20,15 +20,15 @@ let imgDiv = document.querySelector('.choiceimg');
 // Show icons that match the computer's choice
 function ShowCompImg(computerSelection) {
     if(computerSelection == 'ROCK'){
-        compImg.src = "./images/rock.png"
+        compImg.src = "./images/rps-icons/paper.png"
         imgDiv.appendChild(compImg);
      }
      else if (computerSelection == 'PAPER') {
-        compImg.src = "./images/paper.png"
+        compImg.src = "./images/rps-icons/paper.png"
         imgDiv.appendChild(compImg);
      } 
      else if(computerSelection == 'SCISSORS'){
-        compImg.src = "./images/scissors.png"
+        compImg.src = "./images/rps-icons/scissors.png"
         imgDiv.appendChild(compImg);
      }
 }
@@ -37,15 +37,15 @@ function ShowCompImg(computerSelection) {
 function ShowPlayerImg(playerSelection){
 
      if(playerSelection == 'ROCK'){
-        playerImg.src = "./images/rock.png"
+        playerImg.src = "./images/rps-icons/rock.png"
         imgDiv.appendChild(playerImg);
      }
      else if (playerSelection == 'PAPER') {
-        playerImg.src = "./images/paper.png"
+        playerImg.src = "./images/rps-icons/paper.png"
         imgDiv.appendChild(playerImg);
      } 
      else if(playerSelection == 'SCISSORS'){
-        playerImg.src = "./images/scissors.png"
+        playerImg.src = "./images/rps-icons/scissors.png"
         imgDiv.appendChild(playerImg);
      }  
 }
@@ -153,7 +153,7 @@ function playRound(computerSelection, playerSelection){
         replayBtn.innerText = "Play Again";
         btnDiv.appendChild(replayBtn);
       } else if(playerScore == computerScore){
-        display.textContent = "You drawed!!! That was a real battle";
+        display.textContent = "You drew!!! That was a real battle.";
         replayBtn.innerText = "Play Again";
         btnDiv.appendChild(replayBtn);
       } else {
