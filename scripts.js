@@ -97,7 +97,7 @@ function playRound(computerSelection, playerSelection){
             break;
 
         case (playerSelection == computerSelection):
-            result = "Oops!That was a draw";
+            result = "Oops! That was a draw";
             break;
         
         default:
